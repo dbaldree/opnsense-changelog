@@ -10,10 +10,10 @@ rm -f ${WORKDIR}/*
 echo '[' > ${WORKDIR}/index.json
 for DOC in ${DOCS}
 do
-#	${WEBIFY} ${CURDIR}/${DOC} > \
-#	    ${WORKDIR}/${DOC:C/.*\///1}.htm 2>> ${WORKDIR}/index.json
-#	${WEBIFY} ${CURDIR}/${DOC} text > \
-#	    ${WORKDIR}/${DOC:C/.*\///1}.txt
+${WEBIFY} ${CURDIR}/${DOC} > \
+${WORKDIR}/${DOC:C/.*\///1}.htm 2>> ${WORKDIR}/index.json
+${WEBIFY} ${CURDIR}/${DOC} text > \
+${WORKDIR}/${DOC:C/.*\///1}.txt
 echo ${DOC}
 if [ ${DOC}!=${DOCS} ]; then
  echo ',' >> ${WORKDIR}/index.json

@@ -11,10 +11,9 @@ echo '[' > ${WORKDIR}/index.json
 for DOC in ${DOCS}
 do
 ${WEBIFY} ${CURDIR}/${DOC} > \
-${WORKDIR}/${DOC:C/.*\///1}.htm 2>> ${WORKDIR}/index.json
+${WORKDIR}/${DOC##*/}.htm 2>> ${WORKDIR}/index.json
 ${WEBIFY} ${CURDIR}/${DOC} text > \
-${WORKDIR}/${DOC:C/.*\///1}.txt
-echo ${DOC}
+${WORKDIR}/${DOC##*/}.txt
 if [ ${DOC}!=${DOCS} ]; then
  echo ',' >> ${WORKDIR}/index.json
 fi

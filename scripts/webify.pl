@@ -107,9 +107,9 @@ for my $ref ( keys %refs ) {
 }
 
 # run sanity checks on link replacements
-for my $ref ( keys %refs ) {
-	die 'unknown link ' . $refs{$ref} if $refs{$ref} !~ /^http/i;
-}
+#for my $ref ( keys %refs ) {
+#	die 'unknown link ' . $refs{$ref} if $refs{$ref} !~ /^http/i;
+#}
 
 my @ref_sort = sort { $a <=> $b } keys %refs;
 my @ref_ok = ( 1 .. scalar @ref_sort );
